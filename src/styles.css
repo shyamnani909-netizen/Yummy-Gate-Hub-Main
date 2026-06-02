@@ -1,0 +1,69 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --gradient-warm: linear-gradient(135deg, var(--primary), var(--accent));
+  --shadow-warm: 0 12px 30px -10px color-mix(in oklab, var(--primary) 40%, transparent);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: #fff7dc;
+  --foreground: #10210d;
+  --card: #ffffff;
+  --card-foreground: #10210d;
+  --popover: #ffffff;
+  --popover-foreground: #10210d;
+  --primary: #2f8a45;
+  --primary-foreground: #ffffff;
+  --secondary: #ff8c00;
+  --secondary-foreground: #10210d;
+  --muted: #f9e18b;
+  --muted-foreground: #3c3a2e;
+  --accent: #f5d539;
+  --accent-foreground: #10210d;
+  --destructive: #d9491b;
+  --destructive-foreground: #ffffff;
+  --border: #e8d7a4;
+  --input: #fff8e0;
+  --ring: #2f8a45;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background: linear-gradient(135deg, #2f8a45 0%, #f5d539 45%, #ff8c00 100%);
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+}
